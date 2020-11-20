@@ -1,0 +1,51 @@
+$gray-50: #505050;
+$gray-80: #808080;
+$active-color: #3a8b2d;
+
+.elevatorCallPanel {
+  display: grid;
+  grid-template-columns: max-content max-content max-content max-content;
+  grid-gap: 10px;
+  background: #4eb1ba;
+  padding: 10px;
+  border-radius: 4px;
+  height: 240px;
+  align-self: flex-start;
+  margin-top: 60px;
+}
+
+.callButton {
+  height: 40px;
+  width: 40px;
+  border: 3px solid $gray-80;
+  color: $gray-80;
+  border-radius: 50%;
+  font-weight: 800;
+  outline: none;
+  background: #e0e0c1;
+
+  &:hover {
+    color: $gray-50;
+    border-color: $gray-50;
+
+  }
+
+  &:active {
+    @extend .active;
+  }
+}
+
+.active {
+  color: $active-color;
+  border-color: $active-color;
+  box-shadow: 0px 0px 5px $active-color;
+}
+
+.callButtonActive {
+  @extend .active;
+  @extend .callButton;
+
+  &:hover {
+    @extend .active;
+  }
+}
